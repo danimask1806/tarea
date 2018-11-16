@@ -14,6 +14,7 @@ $db_name="tareasdb1234";
 $db_login="tareasroot";
 $db_pswd="password";
 
+
 $con = mysql_connect($db_host, $db_login, $db_pswd) or die(mysql_error());
 mysql_set_charset("utf8"); 
 
