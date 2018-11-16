@@ -1,18 +1,14 @@
 <?php
 
-// Juan Antonio Villalpando
-// juana1991@yahoo.com 
-
-// http://kio4.com
 
 error_reporting (E_ALL  ^  E_NOTICE  ^  E_DEPRECATED);
 
 // 1.- IDENTIFICACION nombre de la base, del usuario, clave y servidor
 
-$db_host="mysql.hostinger.es";
-$db_name="u798509677_comun";
-$db_login="u798509677_juan";
-$db_pswd="contraseña";
+$db_host="db4free.net";
+$db_name="tareasdb1234";
+$db_login="tareasroot";
+$db_pswd="password";
 
 $con = mysql_connect($db_host, $db_login, $db_pswd) or die(mysql_error());
 mysql_set_charset("utf8"); 
