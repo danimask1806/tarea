@@ -22,31 +22,35 @@ echo "Connected successfully";
         echo "esta ...";
         $peticion = $llegan['orden'];
         echo "hecho";
-        $sql = "INSERT INTO horario (dia,nombre,hora) VALUES ('lunes','matematicas','15-40-00')";
 
+$sql = "INSERT INTO horario (dia,nombre,hora) VALUES ('lunes','matematicas','15:40:00')";
 if ($conn->query($peticion) === TRUE) {
     echo "Nueva table bien creada";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-        
-        // En los casos que hay SELECT y se debe enviar una respuesta actúa este código
-    if (substr($peticion, 0, 6) == 'SELECT') {
-    $resultado = mysql_query("SHOW COLUMNS FROM personas");
-    $numerodefilas = mysql_num_rows($resultado);
-    if ($numerodefilas > 0) {
-     
-    while ($rowr = mysql_fetch_row($hacer)) {
-     for ($j=0;$j<$numerodefilas;$j++) {
-      $en_csv .= $rowr[$j].", ";
-     }
-     $en_csv .= "\n"."<br>";
+
+$sql = "SELECT id, firstname, lastname FROM horario";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+        $en_csv .= "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
     }
-     
-    }
-     
+} else {
+    echo "0 results";
+}
     print $en_csv;
-    }
+
+    $sql = "DELETE FROM horario WHERE id=2";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
+}
         
         $conn->close();
 ?>
