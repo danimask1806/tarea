@@ -6,6 +6,7 @@
 $servername = "db4free.net";
 $username = "tareasroot";
 $password = "password";
+$db_name="tareasdb1234";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
@@ -15,6 +16,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
+        
+        mysql_select_db($db_name) or die(mysql_error());
         
         $conn->close();
 ?>
