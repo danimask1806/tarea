@@ -21,12 +21,10 @@ echo "Connected successfully";
         $llegan = $_GET;
         echo "esta ...";
         $peticion = $llegan['orden'];
-        echo $peticion;
-        $hacer = mysql_query($peticion);
-        
+        echo "hecho";
         $sql = "INSERT INTO horario (dia,nombre,hora) VALUES ('lunes','matematicas','15-40-00')";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($peticion) === TRUE) {
     echo "Nueva table bien creada";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
