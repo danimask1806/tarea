@@ -4,7 +4,7 @@
     
         <?php 
         
-        $conn = mysqli_connect(“mysql#.000webhost.com”, “a3367xxx_test”,"******", “a3367xxx_test”) or die(mysql_error());
+        $conn = mysqli_connect(“mysql#.000webhost.com”, “id7866198_root”,"password", “id7866198_tareasdb”) or die(mysql_error());
         if (!$conn) {
             echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
             echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
