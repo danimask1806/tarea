@@ -8,7 +8,7 @@ $username = "tareasroot";
 $password = "password";
 
 // Create connection
-$conn = new mysql($servername, $username, $password,"tareasdb1234");
+$conn = new mysqli($servername, $username, $password,"tareasdb1234");
 
 // Check connection
 if ($conn->connect_error) {
