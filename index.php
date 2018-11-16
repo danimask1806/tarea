@@ -3,7 +3,7 @@
     <body>
     
         <?php 
-        $enlace = mysqli_connect("localhost" , "id7866198_root" , "password" , "id7866198_tareasdb");
+        $enlace = mysqli_connect("https://databases.000webhost.com/" , "id7866198_root" , "password" , "id7866198_tareasdb");
         if (!$enlace) {
             echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
             echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
