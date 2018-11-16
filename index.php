@@ -6,10 +6,10 @@
 $servername = "db4free.net";
 $username = "tareasroot";
 $password = "password";
-$db_name="tareasdb1234";
+$db_name = "tareasdb1234";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password,$db_name);
 
 // Check connection
 if ($conn->connect_error) {
