@@ -16,14 +16,20 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
-        mysql_set_charset("utf8"); 
         
-        mysql_select_db($db_name) or die(mysql_error());
-        
+       
         $llegan=$_GET;
         $peticion=$llegan['orden'];
         echo $peticion;
         $hacer = mysql_query($peticion);
+        
+        $sql = "INSERT INTO horario (dia,nombre,hora) VALUES ('lunes','matematicas','15-40-00')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Nueva table bien creada";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
         
         // En los casos que hay SELECT y se debe enviar una respuesta actúa este código
     if (substr($peticion, 0, 6) == 'SELECT') {
