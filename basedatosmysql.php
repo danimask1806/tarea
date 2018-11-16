@@ -1,3 +1,8 @@
+
+<!DOCTYPE html>
+<html>
+    <body>
+
 <?php
 
 
@@ -48,3 +53,7 @@ $hacer = mysql_query($peticion);
 /////////////////////////////////////////////////////////////////////////////// 
 mysql_close($con);
 ?>
+        
+        
+            </body>
+</html>
