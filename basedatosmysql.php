@@ -10,8 +10,8 @@ error_reporting (E_ALL  ^  E_NOTICE  ^  E_DEPRECATED);
 // 1.- IDENTIFICACION nombre de la base, del usuario, clave y servidor
 
 $db_host="db4free.net";
-$db_name="tareasroot";
-$db_login="tareasdb1234";
+$db_name="tareasdb1234";
+$db_login="tareasroot";
 $db_pswd="password";
 
 $con = mysql_connect($db_host, $db_login, $db_pswd) or die(mysql_error());
