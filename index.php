@@ -17,9 +17,10 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully";
         
-       
-        $llegan=$_GET;
-        $peticion=$llegan['orden'];
+        echo "casi";
+        $llegan = $_GET;
+        echo "esta ...";
+        $peticion = $llegan['orden'];
         echo $peticion;
         $hacer = mysql_query($peticion);
         
