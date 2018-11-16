@@ -3,7 +3,7 @@
     <body>
     
       <?php
-$servername = "databases.000webhost.com";
+$servername = "myslq.000webhost.com";
 $username = "id7866198_root";
 $password = "password";
 
