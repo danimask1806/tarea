@@ -24,6 +24,24 @@ echo "Connected successfully";
         echo $peticion;
         $hacer = mysql_query($peticion);
         
+        // En los casos que hay SELECT y se debe enviar una respuesta actúa este código
+    if (substr($peticion, 0, 6) == 'SELECT') {
+    $resultado = mysql_query("SHOW COLUMNS FROM personas");
+    $numerodefilas = mysql_num_rows($resultado);
+    if ($numerodefilas > 0) {
+     
+    while ($rowr = mysql_fetch_row($hacer)) {
+     for ($j=0;$j<$numerodefilas;$j++) {
+      $en_csv .= $rowr[$j].", ";
+     }
+     $en_csv .= "\n"."<br>";
+    }
+     
+    }
+     
+    print $en_csv;
+    }
+        
         $conn->close();
 ?>
 
