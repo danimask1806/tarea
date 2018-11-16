@@ -43,7 +43,17 @@ if ($result->num_rows > 0) {
     print $en_csv;
             
         }
-        
+         if (isset($_POST['btninsertar'])) {
+		 
+		 
+$sql = "INSERT INTO tareas (dia,nombre,hora) VALUES ('lunes','matematicas','15:40:00')";
+if ($conn->query($peticion) === TRUE) {
+    echo "Nueva table bien creada";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+ }
 // Create connection
 $conn = new mysqli($servername, $username, $password,$db_name);
 
@@ -52,21 +62,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
-        
-        echo "casi";
-        $llegan = $_GET;
-        echo "esta ...";
-        $peticion = $llegan['orden'];
-        echo "hecho";
-
-$sql = "INSERT INTO horario (dia,nombre,hora) VALUES ('lunes','matematicas','15:40:00')";
-if ($conn->query($peticion) === TRUE) {
-    echo "Nueva table bien creada";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-
+	    
+if (isset($_POST['btnborrar'])) {
 
     $sql = "DELETE FROM horario WHERE id=2";
 
@@ -75,7 +72,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error deleting record: " . $conn->error;
 }
-        
+}
         $conn->close();
 ?>
 
