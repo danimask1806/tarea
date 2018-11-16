@@ -3,12 +3,12 @@
     <body>
     
       <?php
-$servername = "mysql.000webhost.com";
-$username = "id7866198_root";
+$servername = "db4free.net";
+$username = "tareasroot";
 $password = "password";
 
 // Create connection
-$conn = new mysql($servername, $username, $password,"id7866198_tareasdb");
+$conn = new mysql($servername, $username, $password,"tareasdb1234");
 
 // Check connection
 if ($conn->connect_error) {
