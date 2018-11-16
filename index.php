@@ -16,6 +16,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
+        mysql_set_charset("utf8"); 
         
         mysql_select_db($db_name) or die(mysql_error());
         
