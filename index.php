@@ -19,6 +19,11 @@ echo "Connected successfully";
         
         mysql_select_db($db_name) or die(mysql_error());
         
+        $llegan=$_GET;
+        $peticion=$llegan['orden'];
+        echo $peticion;
+        $hacer = mysql_query($peticion);
+        
         $conn->close();
 ?>
 
