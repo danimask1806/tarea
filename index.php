@@ -1,48 +1,24 @@
-<?php 
-	session_start(); 
-
-	if (!isset($_SESSION['username'])) {
-		$_SESSION['msg'] = "You must log in first";
-		header('location: login.php');
-	}
-
-	if (isset($_GET['logout'])) {
-		session_destroy();
-		unset($_SESSION['username']);
-		header("location: login.php");
-	}
-
-?>
-<!DOCTYPE html>
+< !DOCTYPE html >
 <html>
-<head>
-	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div class="header">
-		<h2>Home Page</h2>
-	</div>
-	<div class="content">
+    <body>
+    
+        <? php 
+$enlace = mysqli_connect("localhost" , "id7866198_root" , "password" , "id7866198_tareasdb");
+if (!$enlace) {
+    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
+    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
 
-		<!-- notification message -->
-		<?php if (isset($_SESSION['success'])) : ?>
-			<div class="error success" >
-				<h3>
-					<?php 
-						echo $_SESSION['success']; 
-						unset($_SESSION['success']);
-					?>
-				</h3>
-			</div>
-		<?php endif ?>
+echo "Éxito: Se realizó una conexión apropiada a MySQL! La base de datos mi_bd es genial." . PHP_EOL;
+echo "Información del host: " . mysqli_get_host_info($enlace) . PHP_EOL;
 
-		<!-- logged in user information -->
-		<?php  if (isset($_SESSION['username'])) : ?>
-			<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-			<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-		<?php endif ?>
-	</div>
-		
-</body>
+mysqli_close($enlace);
+?>
+
+
+
+
+            </body>
 </html>
