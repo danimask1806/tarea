@@ -1,9 +1,6 @@
 <?php
 
-// Juan Antonio Villalpando
-// juana1991@yahoo.com 
 
-// http://kio4.com
 
 error_reporting (E_ALL  ^  E_NOTICE  ^  E_DEPRECATED);
 
@@ -15,7 +12,7 @@ $db_login="tareasroot";
 $db_pswd="password";
 
 
-$con = mysql_connect($db_host, $db_login, $db_pswd) or die(mysql_error());
+$con = mysqli_connect($db_host, $db_login, $db_pswd) or die(mysql_error());
 mysql_set_charset("utf8"); 
 
 // 2.- CONEXION A LA BASE DE DATOS
