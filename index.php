@@ -3,15 +3,11 @@
     <body>
              <form method="post">
                   <input id="nombre" name="nombre" type="text" >
-				  <input id="fecha"  name="fecha" type="text" >
+		<input id="fecha"  name="fecha" type="text" >
                   <input id="hora" name="hora" type="text">
                   <input id="estado" name="estado" type="text" >
                   <input id="prioridad" name="prioridad" type="text" >
-                  <button id="btnvalidar" type="submit" name="validar tareas" > </button>
-                 <button id="btninsertar" type="submit" name="validar tareas" > </button>
-                 <button id="btnborrar" type="submit" name="validar tareas" > </button>
-                 
-                 
+		    <input id="quehacer" name="quehacer" type="text" >
             </form>
     
       <?php
@@ -29,7 +25,7 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 
-        if (isset($_POST['btnvalidar'])) {
+        if (intval($_POST['quehacer']) == 1) {
 
             
      $sql = "SELECT id, nombre, fecha, hora, estado,prioridad FROM horario";
@@ -47,7 +43,7 @@ if ($result->num_rows > 0) {
             
         }
      
-     if (isset($_POST['btninsertar'])) {
+     if (intval($_POST['quehacer']) == 2) {
 		 
 	$id = "";
     $nombre = $_POST['nombre'];
@@ -65,7 +61,7 @@ if ($conn->query($sql) === TRUE) {
  }
 
 	    
-if (isset($_POST['btnborrar'])) {
+if (intval($_POST['quehacer']) == 3) {
     $sql = "DELETE FROM horario WHERE id=2";
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
