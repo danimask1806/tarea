@@ -6,7 +6,7 @@ $password = "password";
 $db_name = "tareasdb1234";
 
 	    
-	$id = '';
+	$id = NULL;
     $nombre = $_POST['nombre'];
     $fecha = $_POST['fecha'];
     $hora = $_POST['hora'];
