@@ -31,7 +31,7 @@ echo "Connected successfully";
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $en_csv .= "codigo: " . $row["codigo"] . " -Nombre: " . $row["nombre"] . " -Fecha " . $row["fecha"]." -Hora " . $row["hora"]. " -Estado " . $row["estado"] . " -Prioridad " . $row["prioridad"].&nbsp;
+        $en_csv .= "codigo: " . $row["codigo"] . " -Nombre: " . $row["nombre"] . " -Fecha " . $row["fecha"]." -Hora " . $row["hora"]. " -Estado " . $row["estado"] . " -Prioridad " . $row["prioridad"]."&nbsp";
     }
 } else {
     echo "0 results";
