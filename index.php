@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
 		 
 
 
-$sql = "INSERT INTO `tarea` (codigo, nombre,fecha,hora,estado,prioridad) VALUES (NULL, $nombre,$fecha,$hora,$estado,$prioridad)";
+$sql = "INSERT INTO `tarea` VALUES (NULL, '$nombre','$fecha','$hora','$estado','$prioridad')";
 if ($conn->query($sql) === TRUE) {
     echo "Nueva tabla bien creada";
 } else {
