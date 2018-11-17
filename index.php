@@ -20,17 +20,20 @@ $username = "tareasroot";
 $password = "password";
 $db_name = "tareasdb1234";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password,$db_name);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+
+
         if (isset($_POST['btnvalidar'])) {
-    $id = "";
-    $nombre = $_POST['nombre'];
-    $fecha = $_POST['fecha'];
-    $hora = $_POST['hora'];
-    $estado = $_POST['estado'];
-    $prioridad = $_POST['prioridad'];
+
             
      $sql = "SELECT id, nombre, fecha, hora, estado,prioridad FROM horario";
     $result = $conn->query($sql);
-
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
@@ -43,30 +46,27 @@ if ($result->num_rows > 0) {
     print $en_csv;
             
         }
-         if (isset($_POST['btninsertar'])) {
+     
+     if (isset($_POST['btninsertar'])) {
 		 
-		 
-$sql = "INSERT INTO tareas (dia,nombre,hora) VALUES ('lunes','matematicas','15:40:00')";
-if ($conn->query($peticion) === TRUE) {
+	$id = "";
+    $nombre = $_POST['nombre'];
+    $fecha = $_POST['fecha'];
+    $hora = $_POST['hora'];
+    $estado = $_POST['estado'];
+    $prioridad = $_POST['prioridad'];
+
+$sql = "INSERT INTO tareas (codigo, dia,nombre,fecha,hora,estado,prioridad) VALUES ( $id,$nombre,$fecha,$hora,$estado,$prioridad)";
+if ($conn->query($sql) === TRUE) {
     echo "Nueva table bien creada";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
  }
-// Create connection
-$conn = new mysqli($servername, $username, $password,$db_name);
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
 	    
 if (isset($_POST['btnborrar'])) {
-
     $sql = "DELETE FROM horario WHERE id=2";
-
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
 } else {
