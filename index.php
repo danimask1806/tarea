@@ -20,7 +20,6 @@ $conn = new mysqli($servername, $username, $password,$db_name);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-echo "Connected successfully";
 
 
         if (intval($_GET["quehacer"]) == 1) {
@@ -31,7 +30,7 @@ echo "Connected successfully";
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $en_csv .= "codigo: " . $row["codigo"] . " -Nombre: " . $row["nombre"] . " -Fecha " . $row["fecha"]." -Hora " . $row["hora"]. " -Estado " . $row["estado"] . " -Prioridad " . $row["prioridad"] . " ";
+        $en_csv .= "codigo: " . $row["codigo"] . " -Nombre: " . $row["nombre"] . " -Fecha: " . $row["fecha"]." -Hora: " . $row["hora"]. " -Estado: " . $row["estado"] . " -Prioridad: " . $row["prioridad"] . " .";
     }
 } else {
     echo "0 results";
