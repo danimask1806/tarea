@@ -19,7 +19,16 @@ $username = "tareasroot";
 $password = "password";
 $db_name = "tareasdb1234";
 
+	    
+	$id = '';
+    $nombre = $_POST['nombre'];
+    $fecha = $_POST['fecha'];
+    $hora = $_POST['hora'];
+    $estado = $_POST['estado'];
+    $prioridad = $_POST['prioridad'];
+	    
 // Create connection
+	    
 $conn = new mysqli($servername, $username, $password,$db_name);
 // Check connection
 if ($conn->connect_error) {
@@ -47,14 +56,9 @@ if ($result->num_rows > 0) {
      
      if (intval($_GET["quehacer"]) == 2) {
 		 
-	$id = "";
-    $nombre = $_POST['nombre'];
-    $fecha = $_POST['fecha'];
-    $hora = $_POST['hora'];
-    $estado = $_POST['estado'];
-    $prioridad = $_POST['prioridad'];
 
-$sql = "INSERT INTO tareas (codigo, nombre,fecha,hora,estado,prioridad) VALUES ( null,$nombre,$fecha,$hora,$estado,$prioridad)";
+
+$sql = "INSERT INTO tareas (codigo, nombre,fecha,hora,estado,prioridad) VALUES ( $id,$nombre,$fecha,$hora,$estado,$prioridad)";
 if ($conn->query($sql) === TRUE) {
     echo "Nueva tabla bien creada";
 } else {
