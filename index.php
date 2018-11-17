@@ -6,7 +6,7 @@ $password = "password";
 $db_name = "tareasdb1234";
 
 	    
-	$id = NULL;
+	$id = $_POST['id'];
     $nombre = $_POST['nombre'];
     $fecha = $_POST['fecha'];
     $hora = $_POST['hora'];
@@ -53,11 +53,11 @@ if ($conn->query($sql) === TRUE) {
 
 	    
 if (intval($_GET["quehacer"]) == 3) {
-    $sql = "DELETE FROM horario WHERE id=2";
+    $sql = "DELETE * FROM tarea WHERE codigo=".$id ;
 if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    echo "Alarma borrada";
 } else {
-    echo "Error deleting record: " . $conn->error;
+    echo "Error al borrar: " . $conn->error;
 }
 }
         $conn->close();
