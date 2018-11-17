@@ -53,7 +53,7 @@ if ($conn->query($sql) === TRUE) {
 
 	    
 if (intval($_GET["quehacer"]) == 3) {
-    $sql = "DELETE * FROM tarea WHERE codigo=".$id ;
+    $sql = "DELETE FROM tarea WHERE codigo='$id' " ;
 if ($conn->query($sql) === TRUE) {
     echo "Alarma borrada";
 } else {
