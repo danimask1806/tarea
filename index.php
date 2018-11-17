@@ -2,10 +2,8 @@
 <html>
     <body>
 	    <form method="get">
-		    Nombre: <input type="text" name="nombre"><br>
-		    <input type="submit" value="Enviar">
+		    Nombre: <input type="text" name="quehacer"><br>
 		</form>
-         Hola <?php isset($_GET["nombre"]) ? print $_GET["nombre"] : ""; ?><br>
 	    
              <form  method="post">
                   <input id="nombre" name="nombre" type="text" >
@@ -13,7 +11,6 @@
                   <input id="hora" name="hora" type="text">
                   <input id="estado" name="estado" type="text" >
                   <input id="prioridad" name="prioridad" type="text" >
-		    <input id="quehacer" name="quehacer" type="text" >
             </form>
     
       <?php
@@ -31,7 +28,7 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 
-        if (intval($_POST['quehacer']) == 1) {
+        if (intval($_GET["quehacer"]) == 1) {
 
             
      $sql = "SELECT * FROM `tarea` WHERE 1";
@@ -48,7 +45,7 @@ if ($result->num_rows > 0) {
             
         }
      
-     if (intval($_POST['quehacer']) == 2) {
+     if (intval($_GET["quehacer"]) == 2) {
 		 
 	$id = "";
     $nombre = $_POST['nombre'];
@@ -66,7 +63,7 @@ if ($conn->query($sql) === TRUE) {
  }
 
 	    
-if (intval($_POST['quehacer']) == 3) {
+if (intval($_GET["quehacer"]) == 3) {
     $sql = "DELETE FROM horario WHERE id=2";
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
