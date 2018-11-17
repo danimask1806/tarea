@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
     <body>
-             <form method="post">
+	    <form action="formget.php" method="get">
+		    Nombre: <input type="text" name="nombre"><br>
+		    <input type="submit" value="Enviar">
+		</form>
+         Hola <?php isset($_GET["nombre"]) ? print $_GET["nombre"] : ""; ?><br>
+	    
+             <form action="formpost.php" method="post">
                   <input id="nombre" name="nombre" type="text" >
 		<input id="fecha"  name="fecha" type="text" >
                   <input id="hora" name="hora" type="text">
