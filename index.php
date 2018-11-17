@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <body>
-	    <form method="get">
-		    Nombre: <input type="text" name="quehacer"><br>
-		</form>
-	    
-             <form  method="post">
-                  <input id="nombre" name="nombre" type="text" >
-		<input id="fecha"  name="fecha" type="text" >
-                  <input id="hora" name="hora" type="text">
-                  <input id="estado" name="estado" type="text" >
-                  <input id="prioridad" name="prioridad" type="text" >
-            </form>
-    
+
       <?php
 $servername = "db4free.net";
 $username = "tareasroot";
@@ -77,9 +63,3 @@ if ($conn->query($sql) === TRUE) {
 }
         $conn->close();
 ?>
-
-
-
-
-            </body>
-</html>
