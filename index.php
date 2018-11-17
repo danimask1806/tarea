@@ -28,7 +28,7 @@ echo "Connected successfully";
         if (intval($_POST['quehacer']) == 1) {
 
             
-     $sql = "SELECT id, nombre, fecha, hora, estado,prioridad FROM horario";
+     $sql = "SELECT id, nombre, fecha, hora, estado,prioridad FROM tarea";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
@@ -54,7 +54,7 @@ if ($result->num_rows > 0) {
 
 $sql = "INSERT INTO tareas (codigo, dia,nombre,fecha,hora,estado,prioridad) VALUES ( $id,$nombre,$fecha,$hora,$estado,$prioridad)";
 if ($conn->query($sql) === TRUE) {
-    echo "Nueva table bien creada";
+    echo "Nueva tabla bien creada";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
