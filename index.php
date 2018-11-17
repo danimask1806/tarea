@@ -28,13 +28,12 @@ echo "Connected successfully";
         if (intval($_POST['quehacer']) == 1) {
 
             
-     $sql = "SELECT id, nombre, fecha, hora, estado,prioridad FROM tarea";
+     $sql = "SELECT * FROM `tarea` WHERE 1";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["dia"]. " - Name: " . $row["nombre"]. " " . $row["hora"]. "<br>";
-        $en_csv .= "dia: " . $row["dia"]. " - Name: " . $row["nombre"]. " " . $row["hora"]. "<br>";
+        $en_csv .= "codigo: " . $row["codigo"] . " -Nombre: " . $row["nombre"] . " -Fecha " . $row["fecha"]." -Hora " . $row["hora"]. " -Estado " . $row["estado"] . " -Prioridad " . $row["prioridad"]."<br>";
     }
 } else {
     echo "0 results";
