@@ -1,64 +1,48 @@
+<?php 
+	session_start(); 
 
-      <?php
-$servername = "db4free.net";
-$username = "tareasroot";
-$password = "password";
-$db_name = "tareasdb1234";
+	if (!isset($_SESSION['username'])) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+	}
 
-	    
-	$id = $_GET['id'];
-    $nombre = $_POST['nombre'];
-    $fecha = $_POST['fecha'];
-    $hora = $_POST['hora'];
-    $estado = $_POST['estado'];
-    $prioridad = $_POST['prioridad'];
-	    
-// Create connection
-	    
-$conn = new mysqli($servername, $username, $password,$db_name);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+	if (isset($_GET['logout'])) {
+		session_destroy();
+		unset($_SESSION['username']);
+		header("location: login.php");
+	}
 
-
-        if (intval($_GET["quehacer"]) == 1) {
-
-            
-     $sql = "SELECT * FROM `tarea` WHERE 1";
-    $result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $en_csv .= " Codigo: " . $row["codigo"] . ", Nombre: " . $row["nombre"] . ", Fecha: " . $row["fecha"].", Hora: " . $row["hora"]. ", Estado: " . $row["estado"] . ", Prioridad: " . $row["prioridad"] . ", ";
-    }
-} else {
-    echo "0 results";
-}
-    print $en_csv;
-            
-        }
-     
-     if (intval($_GET["quehacer"]) == 2) {
-		 
-
-
-$sql = "INSERT INTO `tarea` VALUES (NULL, '$nombre','$fecha','$hora','$estado','$prioridad')";
-if ($conn->query($sql) === TRUE) {
-    echo "Nueva tabla bien creada";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
- }
-
-	    
-if (intval($_GET["quehacer"]) == 3) {
-    $sql = "DELETE FROM tarea WHERE codigo='$id' " ;
-if ($conn->query($sql) === TRUE) {
-    echo "Alarma borrada";
-} else {
-    echo "Error al borrar: " . $conn->error;
-}
-}
-        $conn->close();
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="header">
+		<h2>Home Page</h2>
+	</div>
+	<div class="content">
+
+		<!-- notification message -->
+		<?php if (isset($_SESSION['success'])) : ?>
+			<div class="error success" >
+				<h3>
+					<?php 
+						echo $_SESSION['success']; 
+						unset($_SESSION['success']);
+					?>
+				</h3>
+			</div>
+		<?php endif ?>
+
+		<!-- logged in user information -->
+		<?php  if (isset($_SESSION['username'])) : ?>
+			<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+			<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+		<?php endif ?>
+	</div>
+		
+</body>
+</html>
