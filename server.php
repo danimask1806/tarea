@@ -30,7 +30,7 @@
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
 			$query = "INSERT INTO users (username, email, password) 
-					  VALUES('$username', '$email', '$password')";
+					  VALUES('$username', '$email', '$password_1')";
 			if ($db->query($query) === TRUE) {
 			    echo "Nueva tabla bien creada";
 				$_SESSION['username'] = $username;
