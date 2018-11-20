@@ -32,7 +32,11 @@
 			$password = md5($password_1);//encrypt the password before saving in the database
 			$query = "INSERT INTO users (username, email, password) 
 					  VALUES('$username', '$email', '$password')";
-			mysqli_query($db, $query);
+			if ($db->query($sql) === TRUE) {
+			    echo "Nueva tabla bien creada";
+			} else {
+			    echo "Error: " . $sql . "<br>" . $conn->error;
+			}
 
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
