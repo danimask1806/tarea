@@ -32,13 +32,13 @@
 			$password = md5($password_1);//encrypt the password before saving in the database
 			$query = "INSERT INTO users (username, email, password) 
 					  VALUES('$username', '$email', '$password')";
-			if ($db->query($sql) === TRUE) {
+			if ($db->query($query) === TRUE) {
 			    echo "Nueva tabla bien creada";
 				$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
 			header('location: index.php');
 			} else {
-			    echo "Error: " . $sql . "<br>" . $conn->error;
+			    echo "Error: " . $query . "<br>" . $db->error;
 			}
 
 			
