@@ -7,8 +7,13 @@
 	$errors = array(); 
 	$_SESSION['success'] = "";
 
+	$servername = "db4free.net";
+	$username = "tareasroot";
+	$password = "password";
+	$db_name = "tareasdb1234";
+
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '', 'registration');
+	$db = mysqli($servername, $username, $password,$db_name);
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
