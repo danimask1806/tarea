@@ -34,13 +34,14 @@
 					  VALUES('$username', '$email', '$password')";
 			if ($db->query($sql) === TRUE) {
 			    echo "Nueva tabla bien creada";
+				$_SESSION['username'] = $username;
+			$_SESSION['success'] = "You are now logged in";
+			header('location: index.php');
 			} else {
 			    echo "Error: " . $sql . "<br>" . $conn->error;
 			}
 
-			$_SESSION['username'] = $username;
-			$_SESSION['success'] = "You are now logged in";
-			header('location: index.php');
+			
 		}
 
 	}
