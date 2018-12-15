@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body background="123456789.svg"> 
-
+<body>
 	<div class="header">
 		<h2>Login</h2>
 	</div>
