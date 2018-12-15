@@ -5,7 +5,7 @@
 	<title>MA</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body background="fondo.gif"> 
 
 	<div class="header">
 		<h2>Login</h2>
