@@ -207,23 +207,7 @@
     
 
     <div id="SITE_CONTAINER"><div style="position:relative" class="noop" data-reactroot=""><script id="meshEligibilityBeat">
-        try {
-            if (wixBiSession && !wixBiSession.sentMeshEligibilityBeat) {
-                wixBiSession.sentMeshEligibilityBeat = true;
-                var tts = '';
-                if (performance) {
-                    if (performance.now) {
-                        tts = '&tts=' + Math.round(performance.now());
-                    }
-                    if (performance.mark) {
-                        performance.mark('meshable (beat 13)');
-                    }
-                }
-                (new Image()).src = 'https://frog.wix.com/bt?src=29&evid=3&pn=1&et=13&v=1.5702.13&msid=93637b08-a571-4ee4-bf05-7d220f6a59e6&vsi=' + wixBiSession.viewerSessionId +
-                    '&url=' + encodeURIComponent(location.href.replace(/^http(s)?:\/\/(www\.)?/, '')) +
-                    '&isp=0&st=2&ts=' + (Date.now() - new Date(wixBiSession.initialTimestamp)) + tts + '&iss=1&c=' + Date.now();                
-            }
-        } catch (e) {}
+        
         </script><div><style type="text/css" data-styleid="theme_fonts">.font_0 {font: normal normal normal 22px/1.41em oswald-medium,oswald,sans-serif ;color:#000000;} 
 .font_1 {font: normal normal normal 14px/1.79em avenir-lt-w01_35-light1475496,sans-serif ;color:#000000;} 
 .font_2 {font: normal normal normal 28px/1.375em oswald-medium,oswald,sans-serif ;color:#000000;} 
@@ -3319,7 +3303,6 @@ Imaging with any questions regarding Web fonts:  http://webfonts.fonts.com
       cursor: pointer;
       background: #fff; }
 
-/*# sourceMappingURL=wix-freemuim-css-entry.css.map */</style><a class="desktop-top" id="top" data-aid="WIX_ADSdesktopTop" href="//es.wix.com/lpviral/es900viral?utm_campaign=vir_wixad_live&amp;adsVersion=white&amp;orig_msid=93637b08-a571-4ee4-bf05-7d220f6a59e6" target="_blank" rel="nofollow" style="height:50px;display:flex"><span class="contents"><span class="text">Este página web se diseñó con la plataforma <span><svg class="wix-logo" viewBox="0 0 28 10.89" alt="wix"><path d="M16.02.2c-.55.3-.76.78-.76 2.14a2.17 2.17 0 0 1 .7-.42 3 3 0 0 0 .7-.4A1.62 1.62 0 0 0 17.22 0a3 3 0 0 0-1.18.2z" class="dot"></path><path d="M12.77.52a2.12 2.12 0 0 0-.58 1l-1.5 5.8-1.3-4.75a4.06 4.06 0 0 0-.7-1.55 2.08 2.08 0 0 0-2.9 0 4.06 4.06 0 0 0-.7 1.55L3.9 7.32l-1.5-5.8a2.12 2.12 0 0 0-.6-1A2.6 2.6 0 0 0 0 .02l2.9 10.83a3.53 3.53 0 0 0 1.42-.17c.62-.33.92-.57 1.3-2 .33-1.33 1.26-5.2 1.35-5.47a.5.5 0 0 1 .34-.4.5.5 0 0 1 .4.5c.1.3 1 4.2 1.4 5.5.4 1.5.7 1.7 1.3 2a3.53 3.53 0 0 0 1.4.2l2.8-11a2.6 2.6 0 0 0-1.82.53zm4.43 1.26a1.76 1.76 0 0 1-.58.5c-.26.16-.52.26-.8.4a.82.82 0 0 0-.57.82v7.36a2.47 2.47 0 0 0 1.2-.15c.6-.3.75-.6.75-2V1.8zm7.16 3.68L28 .06a3.22 3.22 0 0 0-2.3.42 8.67 8.67 0 0 0-1 1.24l-1.34 1.93a.3.3 0 0 1-.57 0l-1.4-1.93a8.67 8.67 0 0 0-1-1.24 3.22 3.22 0 0 0-2.3-.43l3.6 5.4-3.7 5.4a3.54 3.54 0 0 0 2.32-.48 7.22 7.22 0 0 0 1-1.16l1.33-1.9a.3.3 0 0 1 .57 0l1.37 2a8.2 8.2 0 0 0 1 1.2 3.47 3.47 0 0 0 2.33.5z"></path></svg></span><span class="com" >.com</span>. Crea tu página web hoy.</span><span class="button">Comienza ya</span></span></a></div><div class="siteAspectsContainer"><div><div style="min-height:;min-width:;visibility:hidden;top:;bottom:;left:;right:;width:;height:;position:absolute;z-index:" class="s_DtaksTPAWidgetSkin" id="tpaWorker_12"><iframe data-src="https://progallery.wix.com/worker.html?cacheKiller=1544812894938&amp;compId=tpaWorker_12&amp;currency=COP&amp;deviceType=desktop&amp;endpointType=worker&amp;instance=aU110ERAgp-hUrN4GH-lIxT56-G2k35sVAL4TDYrAQU.eyJpbnN0YW5jZUlkIjoiYzNmMDk1YjktODU0Ny00Njc0LThmNzMtZWJmMWE3ZjFiODY1IiwiYXBwRGVmSWQiOiIxNDI3MWQ2Zi1iYTYyLWQwNDUtNTQ5Yi1hYjk3MmFlMWY3MGUiLCJtZXRhU2l0ZUlkIjoiOTM2MzdiMDgtYTU3MS00ZWU0LWJmMDUtN2QyMjBmNmE1OWU2Iiwic2lnbkRhdGUiOiIyMDE4LTEyLTE1VDIyOjM2OjQzLjA3MFoiLCJ1aWQiOm51bGwsImlwQW5kUG9ydCI6IjE4Ni4xNTQuMzQuMjE2LzQwMDE4IiwidmVuZG9yUHJvZHVjdElkIjpudWxsLCJkZW1vTW9kZSI6ZmFsc2UsIm9yaWdpbkluc3RhbmNlSWQiOiI5NmJiNmU5OS1lZDc3LTQxMGMtYmQzZi1kZDQzYmE2ODUzNGEiLCJhaWQiOiJiODgwN2ZkZC1mNDE1LTQxMDgtYjY0Ni05YzU4MzUxNmFmYjEiLCJiaVRva2VuIjoiNTA5M2VlYjEtMjAzNi0wODkwLTMwNzYtOTZkM2E4OWJlMTgzIiwic2l0ZU93bmVySWQiOiJhYjZmOTEwOC00MDc3LTQwMWYtODA4MC02ZWMxNDg1ZmI3MzAifQ&amp;locale=es&amp;tz=America%2FBogota&amp;viewMode=site" scrolling="no" frameBorder="0" allow="autoplay; camera; microphone; geolocation; vr" allowtransparency="true" allowfullscreen="" name="tpaWorker_12" style="display:none;width:100%;height:100%;overflow:hidden;position:absolute" title="Wix Pro Gallery" aria-label="Wix Pro Gallery" id="tpaWorker_12iframe" class="s_DtaksTPAWidgetSkiniframe"></iframe><div id="tpaWorker_12overlay" class="s_DtaksTPAWidgetSkinoverlay"></div></div><style type="text/css" data-styleid="s_DtaksTPAWidgetSkin">.s_DtaksTPAWidgetSkin {overflow:hidden;}
 .s_DtaksTPAWidgetSkin iframe {position:absolute;width:100%;height:100%;overflow:hidden;}
 .s_DtaksTPAWidgetSkinpreloaderOverlay {position:absolute;top:0;left:0;color:#373737;width:100%;height:100%;}
 .s_DtaksTPAWidgetSkinpreloaderOverlaycontent {width:100%;height:100%;}
