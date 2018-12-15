@@ -4,7 +4,11 @@
 }
 body {
 	font-size: 120%;
-	background: #F8F8FF;
+	background: url(123456789.svg) no-repeat center center fixed;
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
 }
 
 .header {
