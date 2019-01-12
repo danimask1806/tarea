@@ -1,10 +1,8 @@
-<?php 
-	session_start();
+<?php ;
 	// variable declaration
 	$username = "";
 	$email    = "";
 	$errors = array(); 
-	$_SESSION['success'] = "";
 	// connect to database
 	$db = mysqli_connect('db4free.net', 'tareasroot', 'password', 'tareasdb1234');
 	// REGISTER USER
@@ -27,9 +25,6 @@
 					  VALUES('$username', '$email', '$password_1')";
 			if ($db->query($query) === TRUE) {
 			    echo "Nueva tabla bien creada";
-				$_SESSION['username'] = $username;
-			$_SESSION['success'] = "You are now logged in";
-			
 			} else {
 			    echo "Error: " . $query . "<br>" . $db->error;
 			}
@@ -51,9 +46,7 @@
 			$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 			$results = mysqli_query($db, $query);
 			if (mysqli_num_rows($results) == 1) {
-				$_SESSION['username'] = $username;
-				$_SESSION['success'] = "You are now logged in";
-				
+				echo "usuario logueado"
 			}else {
 				array_push($errors, "Wrong username/password combination");
 			}
