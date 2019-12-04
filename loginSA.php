@@ -34,7 +34,7 @@
 	}
 	// ... 
 	// LOGIN USER
-	if (isset($_POST['login_user'])) {
+	if ($_POST['login_user'] == "si") {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 		if (empty($username)) {
