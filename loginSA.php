@@ -57,4 +57,5 @@
 			}
 		}
 	}
+	echo "hola ".$username;
 ?>
