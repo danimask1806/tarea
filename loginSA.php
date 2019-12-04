@@ -1,4 +1,4 @@
-<? php 
+<?php 
 	// declaración de variable
 	$ username  =  " " ;
 	$ email     =  " " ;
