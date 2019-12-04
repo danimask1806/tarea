@@ -3,11 +3,13 @@
 	// variable declaration
 	$username = "";
 	$email    = "";
-	$errors = array(); 
+	$errors = array();
+	$login_user = $_POST["login_user"]; 
+	$reg_user = $_POST['reg_user']; 
 	// connect to database
 	$db = mysqli_connect('db4free.net', 'tareasroot', 'password', 'tareasdb1234');
 	// REGISTER USER
-	if (isset($_POST['reg_user'])) {
+	if ($reg_user == "1") {
 		// receive all input values from the form
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
@@ -34,7 +36,7 @@
 	}
 	// ... 
 	// LOGIN USER
-	if ($_POST['login_user'] == "si") {
+	if ($login_user == "1") {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 		if (empty($username)) {
