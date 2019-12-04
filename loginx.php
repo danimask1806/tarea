@@ -1,9 +1,9 @@
-<?php include('serverx.php') ?>
+<?php include('server.php') ?>
 <!DOCTYPE html>
 	
-	<form method="post" action="loginx.php">
+	<form method="post" action="login.php">
 
-		<?php include('errorsx.php'); ?>
+		<?php include('errors.php'); ?>
 
 		<div class="input-group">
 			<label>Username</label>
