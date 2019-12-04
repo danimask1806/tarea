@@ -57,5 +57,5 @@
 			}
 		}
 	}
-	echo "hola ".$username;
+	echo "hola ".htmlspecialchars($_POST["username"]);
 ?>
