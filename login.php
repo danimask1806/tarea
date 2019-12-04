@@ -27,7 +27,7 @@
 			<input type="submit" name="login_user">Login</button>
 		</div>
 		<p>
-			Not yet a member? <a href="register.php">Sign up</a>
+			Not yet a member? <a href="loginSA.php">Sign up</a>
 		</p>
 	</form>
 
