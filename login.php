@@ -1,36 +1,36 @@
-<? php include ( ' server.php ' ) ? > 
-<! DOCTYPE html>
-< html >
-< cabeza >
-	< título > MA </ título >
-	< link  rel = " stylesheet "  type = " text / css "  href = " style.css " >
-</ cabeza >
-< body  background = " 123456789.svg " >
-< cuerpo >
-	< div  class = " header " >
-		< h2 > Iniciar sesión </ h2 >
-	</ div >
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MA</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body background="123456789.svg"> 
+<body>
+	<div class="header">
+		<h2>Login</h2>
+	</div>
 	
-	< form  method = " post "  action = " login.php " >
+	<form method="post" action="login.php">
 
-		<? php include ( ' errors.php ' ); ? > 
+		<?php include('errors.php'); ?>
 
-		< div  class = " input-group " >
-			< etiqueta > Nombre de usuario </ etiqueta >
-			< input  type = " text "  name = " username " >
-		</ div >
-		< div  class = " input-group " >
-			< etiqueta > Contraseña </ etiqueta >
-			< input  type = " password "  name = " password " >
-		</ div >
-		< div  class = " input-group " >
-			< input  type = " submit "  name = " login_user " > Iniciar sesión </ button >
-		</ div >
-		< p >
-			¿Todavía no eres miembro? < Un  href = " loginSA.php " > Regístrese </ a >
-		</ p >
-	</ form >
+		<div class="input-group">
+			<label>Username</label>
+			<input type="text" name="username" >
+		</div>
+		<div class="input-group">
+			<label>Password</label>
+			<input type="password" name="password">
+		</div>
+		<div class="input-group">
+			<button type="submit" class="btn" name="login_user">Login</button>
+		</div>
+		<p>
+			Not yet a member? <a href="register.php">Sign up</a>
+		</p>
+	</form>
 
 
-</ cuerpo >
-</ html >
+</body>
+</html>
