@@ -1,4 +1,3 @@
 <? php 
 echo "hola mama";
-
 ?>
