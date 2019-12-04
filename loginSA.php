@@ -8,6 +8,8 @@
 	$reg_user = $_POST['reg_user']; 
 	// connect to database
 	$db = mysqli_connect('db4free.net', 'tareasroot', 'password', 'tareasdb1234');
+
+	echo "Bienvenido";
 	// REGISTER USER
 	if ($reg_user == "1") {
 		// receive all input values from the form
