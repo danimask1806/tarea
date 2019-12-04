@@ -38,7 +38,7 @@
 	}
 	// ... 
 	// LOGIN USER
-	if ($login_user == "1") {
+	if ($GLOBALS["login_user"] == "1") {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 		if (empty($username)) {
@@ -57,5 +57,5 @@
 			}
 		}
 	}
-	echo "hola ".htmlspecialchars($_POST["username"]);
+	echo "hola ".$GLOBALS["username"];
 ?>
