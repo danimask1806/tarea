@@ -2,7 +2,7 @@
 
 	// variable declaration
 
-	$_POST["login_user"] = "";
+	$_POST["login_user"] = "1";
 	$username = "";
 	$email    = "";
 	$errors = array();
