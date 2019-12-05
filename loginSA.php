@@ -1,6 +1,8 @@
 <?php
 
 	// variable declaration
+
+	$_POST["login_user"] = "";
 	$username = "";
 	$email    = "";
 	$errors = array();
