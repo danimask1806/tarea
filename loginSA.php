@@ -9,8 +9,11 @@
 	$login_user = $_POST["login_user"]; 
 	$reg_user = $_POST['reg_user']; 
 	// connect to database
-	$db = mysqli_connect('db4free.net', 'tareasroot', 'password', 'tareasdb1234');
-
+	$db = mysqli_connect('db4free.net', 'tareasroot', 'password', 'ultimatumgamesdb');
+	if (mysqli_connect_errno()) {
+    		echo ("Falló la conexión: %s\n". mysqli_connect_error());
+    		exit();
+	}
 	// REGISTER USER
 	if ($reg_user == "1") {
 		// receive all input values from the form
