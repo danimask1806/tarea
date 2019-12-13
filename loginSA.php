@@ -37,7 +37,9 @@
 			}
 			
 		}else {
-			echo "	error:	";
+			foreach ($errors as $error) : 
+				echo $error ;
+			endforeach; 
 		}
 	}
 	// ... 
