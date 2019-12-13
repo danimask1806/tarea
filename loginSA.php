@@ -40,7 +40,7 @@
 	}
 	// ... 
 	// LOGIN USER
-	if ($GLOBALS["login_user"] == "1") {
+	if (isset($_POST['login'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 		if (empty($username)) {
