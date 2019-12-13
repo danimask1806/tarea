@@ -60,7 +60,9 @@
 			}else {
 				array_push($errors, "Wrong username/password combination");
 			}
+		}else {
+			echo "	error:	";
 		}
 	}
-	echo "hola ".$GLOBALS["username"];
+	echo $GLOBALS["username"];
 ?>
