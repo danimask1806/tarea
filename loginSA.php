@@ -13,6 +13,7 @@
 	}
 	// REGISTER USER
 	if (isset($_POST['register'])) {
+		echo "entro ";
 		// receive all input values from the form
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
