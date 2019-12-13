@@ -11,7 +11,6 @@
 	// connect to database
 	$db = mysqli_connect('db4free.net', 'tareasroot', 'password', 'tareasdb1234');
 
-	echo $_POST['usernama'];
 	// REGISTER USER
 	if ($reg_user == "1") {
 		// receive all input values from the form
@@ -46,6 +45,7 @@
 	// LOGIN USER
 	if (isset($_POST['login'])) {
 		echo "entro al login ";
+		echo $_POST['username'];
 		echo $_POST['login'];
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
