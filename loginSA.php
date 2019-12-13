@@ -47,9 +47,7 @@
 	// ... 
 	// LOGIN USER
 	if (isset($_POST['login'])) {
-		echo "entro al login ";
-		echo $_POST['username'];
-		echo $_POST['login'];
+		
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 		if (empty($username)) {
@@ -59,18 +57,20 @@
 			array_push($errors, "Password is required");
 		}
 		if (count($errors) == 0) {
+			echo " no errors";
 			$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 			$results = mysqli_query($db, $query);
 			if (mysqli_num_rows($results) == 1) {
 				echo "login sucess ";
 			}else {
 				array_push($errors, "Wrong username/password combination");
+				echo "user not exist"
 			}
 		}else {
+			echo " Error: "
 			foreach ($errors as $error) : 
 				echo $error ;
 			endforeach; 
 		}
 	}
-	echo $GLOBALS["username"];
 ?>
