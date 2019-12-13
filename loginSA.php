@@ -36,6 +36,8 @@
 			    echo "Error: " . $query . "<br>" . $db->error;
 			}
 			
+		}else {
+			echo "	error:	";
 		}
 	}
 	// ... 
