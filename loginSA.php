@@ -60,7 +60,7 @@
 			echo " no errors";
 			$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 			$results = mysqli_query($db, $query);
-			echo $results;
+			echo $username.$password;
 			if (mysqli_num_rows($results) == 1) {
 				echo "login sucess ";
 			}else {
