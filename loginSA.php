@@ -64,10 +64,10 @@
 				echo "login sucess ";
 			}else {
 				array_push($errors, "Wrong username/password combination");
-				echo "user not exist"
+				echo "user not exist";
 			}
 		}else {
-			echo " Error: "
+			echo " Error: ";
 			foreach ($errors as $error) : 
 				echo $error ;
 			endforeach; 
