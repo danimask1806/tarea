@@ -41,6 +41,7 @@
 	// ... 
 	// LOGIN USER
 	if (isset($_POST['login'])) {
+		echo "entro al login";
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
 		if (empty($username)) {
