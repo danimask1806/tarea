@@ -73,4 +73,6 @@
 			endforeach; 
 		}
 	}
+
+	mysqli_close($db);
 ?>
