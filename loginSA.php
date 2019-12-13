@@ -61,7 +61,7 @@
 				array_push($errors, "Wrong username/password combination");
 			}
 		}else {
-			echo "	error:	";
+			echo array_values($array);
 		}
 	}
 	echo $GLOBALS["username"];
