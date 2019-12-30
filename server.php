@@ -8,7 +8,7 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('db4free.net', 'tareasroot', 'password', 'ultimatumgamesdb');
+	$db = mysqli_connect('000webhost.com', 'id12092281_ultimatumgamesdb', 'password', 'id12092281_tareasroot');
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
