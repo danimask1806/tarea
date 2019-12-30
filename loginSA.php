@@ -77,12 +77,12 @@
 			$query = "SELECT * FROM users WHERE username='$username' ";
 			$results = mysqli_query($db, $query);
 			if (mysqli_num_rows($results) == 1) {
-				$fila =mysql_fetch_array($results)
+				$fila =mysql_fetch_array($results);
 			}else {
 				$query = "SELECT * FROM users WHERE username='$username' ";
 				$results = mysqli_query($db, $query);
 				if (mysqli_num_rows($results) == 1) {
-					$fila =mysql_fetch_array($results)
+					$fila =mysql_fetch_array($results);
 					$userid = $fila["id"];
 					$query = "INSERT INTO users (userid) 
 						  VALUES('$userid')";
@@ -91,14 +91,15 @@
 					} else {
 					    echo "Error: " . $query . "<br>" . $db->error;
 					}
-			}
-		}else {
+		       	}
+		}
+	}else {
 			echo " Error: ";
 			foreach ($errors as $error) : 
 				echo $error ;
 			endforeach; 
-		}
-	}
+		    }
+	    }
 
 	mysqli_close($db);
 ?>
