@@ -6,7 +6,7 @@
 	$email    = "";
 	$errors = array();
 	// connect to database
-	$db = mysqli_connect('db4free.net', 'tareasroot', 'password', 'ultimatumgamesdb');
+	$db = mysqli_connect('000webhost.com', 'id12092281_ultimatumgamesdb', 'password', 'id12092281_tareasroot');
 	if (mysqli_connect_errno()) {
     		echo ("Falló la conexión: %s\n". mysqli_connect_error());
     		exit();
@@ -24,7 +24,7 @@
 		if (empty($password_1)) { array_push($errors, "Password is required"); }
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
-			$query = "INSERT INTO users (username, email, password) 
+			$query = "INSERT INTO registro (username, email, password) 
 					  VALUES('$username', '$email', '$password_1')";
 			if ($db->query($query) === TRUE) {
 			    echo "new user";
@@ -52,13 +52,45 @@
 		}
 		if (count($errors) == 0) {
 			echo " no errors";
-			$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+			$query = "SELECT * FROM registro WHERE username='$username' AND password='$password'";
 			$results = mysqli_query($db, $query);
 			if (mysqli_num_rows($results) == 1) {
 				echo "login sucess ";
 			}else {
 				array_push($errors, "Wrong username/password combination");
 				echo "user not exist";
+			}
+		}else {
+			echo " Error: ";
+			foreach ($errors as $error) : 
+				echo $error ;
+			endforeach; 
+		}
+	}
+	if (isset($_POST['Entro'])) {
+		
+		$username = mysqli_real_escape_string($db, $_POST['username']);
+		if (empty($username)) {
+			array_push($errors, "Username is required");
+		}
+		if (count($errors) == 0) {
+			$query = "SELECT * FROM users WHERE username='$username' ";
+			$results = mysqli_query($db, $query);
+			if (mysqli_num_rows($results) == 1) {
+				$fila =mysql_fetch_array($results)
+			}else {
+				$query = "SELECT * FROM users WHERE username='$username' ";
+				$results = mysqli_query($db, $query);
+				if (mysqli_num_rows($results) == 1) {
+					$fila =mysql_fetch_array($results)
+					$userid = $fila["id"];
+					$query = "INSERT INTO users (userid) 
+						  VALUES('$userid')";
+					if ($db->query($query) === TRUE) {
+					    echo "new userid";
+					} else {
+					    echo "Error: " . $query . "<br>" . $db->error;
+					}
 			}
 		}else {
 			echo " Error: ";
