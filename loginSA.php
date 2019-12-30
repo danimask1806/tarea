@@ -67,25 +67,6 @@
 			endforeach; 
 		}
 	}
-	if (isset($_POST['Entro'])) {
-		
-		$username = mysqli_real_escape_string($db, $_POST['username']);
-		if (count($errors) == 0) {
-			$query = "SELECT * FROM users WHERE username='$username'";
-			$results = mysqli_query($db, $query);
-			if (mysqli_num_rows($results) == 1) {
-				echo $results;
-			}else {
-				array_push($errors, "Wrong username");
-				echo "user not exist";
-			}
-		}else {
-			echo " Error: ";
-			foreach ($errors as $error) : 
-				echo $error ;
-			endforeach; 
-		}
-	}
 
 	mysqli_close($db);
 ?>
